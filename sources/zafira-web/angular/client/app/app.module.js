@@ -21,8 +21,8 @@
         'app.integrations',
         'app.certification',
         'app.appSidebar',
-        'app.appHeader',
         'app.appUsers',
+        'app.appHeader',
         'app.common',
         'app.testRunCard',
         'app.testsRunsFilter',
@@ -1192,6 +1192,7 @@
     require('./_testcases/testcase.module');
     require('./_settings/settings.module');
     require('./_users/user.module');
+    require('./_users/user');
     require('./_views/view.module');
     require('./_scm/scm.module');
     require('./core/core.module');

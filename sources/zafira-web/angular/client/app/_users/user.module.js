@@ -9,7 +9,5 @@
     require('./components/groups/group.controls.controller');
     require('./components/invites/invite.controller');
     require('./components/invites/invite.controls.controller');
-    require('./components/users/user.controller');
     require('./components/users/user.controls.controller');
-    require('./components/app-users/app-users.controller');
 })();

@@ -19,9 +19,9 @@
                 name: 'Users',
                 countFunc: undefined,
                 // template: COMPONENTS_ROOT + 'users/user.table.html',
-                template: require('./users/user.table.html'),
-                controls: require('./users/user.controls.html'),
-                fabControls: require('./users/user.fab.controls.html'),
+                // template: require('./users/user.table.html'),
+                // controls: require('./users/user.controls.html'),
+                // fabControls: require('./users/user.fab.controls.html'),
                 fabControlsCount: 1,
                 show: function () {
                     return AuthService.UserHasAnyPermission(['MODIFY_USERS', 'VIEW_USERS']);
@@ -199,7 +199,7 @@
                         $mdDialog.cancel(false);
                     };
                 },
-                template: require('./users/create_modal.html'),
+                template: require('./app-users/create_modal.html'),
                 parent: angular.element(document.body),
                 targetEvent: event,
                 clickOutsideToClose:true,
