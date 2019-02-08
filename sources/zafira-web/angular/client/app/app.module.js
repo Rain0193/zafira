@@ -22,6 +22,7 @@
         'app.certification',
         'app.appSidebar',
         'app.appHeader',
+        'app.appUsers',
         'app.common',
         'app.testRunCard',
         'app.testsRunsFilter',
