@@ -30,8 +30,8 @@
             {
                 name: 'Groups',
                 countFunc: undefined,
-                template: COMPONENTS_ROOT + 'groups/group.table.html',
-                fabControls: COMPONENTS_ROOT + 'groups/group.fab.controls.html',
+                // template: COMPONENTS_ROOT + 'groups/group.table.html',
+                // fabControls: COMPONENTS_ROOT + 'groups/group.fab.controls.html',
                 fabControlsCount: 1,
                 show: function () {
                     return AuthService.UserHasAnyPermission(['MODIFY_USER_GROUPS']);
@@ -40,9 +40,9 @@
             {
                 name: 'Invitations',
                 countFunc: undefined,
-                template: COMPONENTS_ROOT + 'invites/invite.table.html',
-                controls: COMPONENTS_ROOT + 'invites/invite.controls.html',
-                fabControls: COMPONENTS_ROOT + 'invites/invite.fab.controls.html',
+                // template: COMPONENTS_ROOT + 'invites/invite.table.html',
+                // controls: COMPONENTS_ROOT + 'invites/invite.controls.html',
+                // fabControls: COMPONENTS_ROOT + 'invites/invite.fab.controls.html',
                 fabControlsCount: 1,
                 show: function () {
                     return AuthService.UserHasAnyRole(['ROLE_ADMIN']) && AuthService.UserHasAnyPermission(['INVITE_USERS', 'MODIFY_INVITATIONS']);
@@ -199,7 +199,7 @@
                         $mdDialog.cancel(false);
                     };
                 },
-                template: require('./app-users/create_modal.html'),
+                template: require('./app-users/modals/create_modal.html'),
                 parent: angular.element(document.body),
                 targetEvent: event,
                 clickOutsideToClose:true,
@@ -221,7 +221,7 @@
         $scope.showGroupDialog = function(event, group) {
             $mdDialog.show({
                 controller: GroupController,
-                template: require('./groups/group_modal.html'),
+                template: require('./app-group/modals/group_modal.html'),
                 parent: angular.element(document.body),
                 targetEvent: event,
                 clickOutsideToClose:true,
@@ -280,7 +280,7 @@
         $scope.showInviteUsersDialog = function(event) {
             $mdDialog.show({
                 controller: InviteController,
-                template: require('./invites/invite_modal.html'),
+                template: require('./app-invites/modals/invite_modal.html'),
                 parent: angular.element(document.body),
                 targetEvent: event,
                 clickOutsideToClose:false,

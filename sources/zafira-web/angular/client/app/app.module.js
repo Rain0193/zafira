@@ -22,6 +22,8 @@
         'app.certification',
         'app.appSidebar',
         'app.appUsers',
+        'app.appGroup',
+        'app.appInvites',
         'app.appHeader',
         'app.common',
         'app.testRunCard',

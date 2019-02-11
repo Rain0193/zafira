@@ -5,8 +5,7 @@
         .controller('GroupListController', GroupListController);
 
     // **************************************************************************
-    function GroupListController($scope, $rootScope, $location, $mdDateRangePicker, $state, $mdDialog, UserService,
-                                 GroupService, PermissionService, UtilService) {
+    function GroupListController($scope, UserService, GroupService, UtilService) {
         'ngInject';
 
         $scope.groups = GroupService.groups;

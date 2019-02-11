@@ -1,5 +1,5 @@
 <div>
-    <md-table-container ng-controller="UserListController">
+    <md-table-container>
         <form ng-submit="search()" name="search_form">
             <table class="table-hover" md-table zafira-background-theme="table">
                 <thead md-head style="position: parent;">
@@ -36,8 +36,7 @@
                             <span
                                 data-ng-if="selectedRange.dateStart && selectedRange.dateEnd && !isEqualDate()">{{selectedRange.dateStart | date : 'dd MMM'}}
                                 - </span><span>{{selectedRange.dateEnd | date : 'dd MMM yyyy'}}</span>
-                            <md-button id="searchCalendar" ng-click="pick($event, true)"><i
-                                    class="material-icons md-18">today</i></md-button>
+                            <md-button id="searchCalendar" ng-click="pick($event, true)"><i class="material-icons md-18">today</i></md-button>
                         </th>
                         <th md-column></th>
                     </tr>

@@ -5,15 +5,15 @@
         .controller('AppGroupController', AppGroupController);
 
     // **************************************************************************
-    function AppGroupController($scope, $rootScope, $location, $mdDateRangePicker, $state, $mdDialog, UserService,
-                                 GroupService, PermissionService, UtilService) {
+    function AppGroupController($scope, UserService,
+                                 GroupService, UtilService) {
         'ngInject';
 
         $scope.groups = GroupService.groups;
 
-        $scope.tabs[$scope.tabs.indexOfField('name', 'Groups')].countFunc = function() {
-            return $scope.groups.length;
-        };
+        // $scope.tabs[$scope.tabs.indexOfField('name', 'Groups')].countFunc = function() {
+        //     return $scope.groups.length;
+        // };
 
         $scope.UtilService = UtilService;
         $scope.getGroupsCount = function() {
