@@ -8,7 +8,7 @@
     <div class="page user-view-page">
         <div class="row ui-section">
             <div layout="row" layout-xs="column" class="col-lg-12 p-users__header-actions">
-                <app-users-controls class="control-buttons" ng-if="activeTab.name === 'Users'"></app-users-controls>
+                <app-users-controls update-fn="search()" class="control-buttons" ng-if="activeTab.name === 'Users'"></app-users-controls>
                 <app-group-controls class="control-buttons" ng-if="activeTab.name === 'Groups'"></app-group-controls>
             </div>
             <md-fab-speed-dial  id="main-fab" ng-if="activeTab.fabControlsCount > 1" md-direction="up" class="md-scale md-fab-bottom-right" has-any-permission="['MODIFY_USERS', 'MODIFY_USER_GROUPS']">
@@ -31,7 +31,7 @@
                     <md-card class="no-margin-h">
                         <md-tabs md-no-ink md-stretch-tabs="never" md-dynamic-height md-border-bottom md-selected="selectedTabIndex">
                             <md-tab ng-if="tab.show();" ng-repeat="tab in tabs" label="{{ tab.name }}" md-on-select="switchTab(tab, $index);">
-                                    <app-users ng-if="tab.name === 'Users'" tabs="tabs"></app-users>
+                                    <app-users ng-if="tab.name === 'Users'" tabs="tabs" source="sr"></app-users>
                                     <app-group ng-if="tab.name === 'Groups'"></app-group>
                                     <app-invites ng-if="tab.name === 'Invitations'"></app-invites>
                             </md-tab>

@@ -18,8 +18,6 @@
             {
                 name: 'Users',
                 countFunc: undefined,
-                // template: COMPONENTS_ROOT + 'users/user.table.html',
-                // template: require('./users/user.table.html'),
                 // controls: require('./users/user.controls.html'),
                 // fabControls: require('./users/user.fab.controls.html'),
                 fabControlsCount: 1,
@@ -30,7 +28,6 @@
             {
                 name: 'Groups',
                 countFunc: undefined,
-                // template: COMPONENTS_ROOT + 'groups/group.table.html',
                 // fabControls: COMPONENTS_ROOT + 'groups/group.fab.controls.html',
                 fabControlsCount: 1,
                 show: function () {
@@ -40,7 +37,6 @@
             {
                 name: 'Invitations',
                 countFunc: undefined,
-                // template: COMPONENTS_ROOT + 'invites/invite.table.html',
                 // controls: COMPONENTS_ROOT + 'invites/invite.controls.html',
                 // fabControls: COMPONENTS_ROOT + 'invites/invite.fab.controls.html',
                 fabControlsCount: 1,
@@ -55,12 +51,18 @@
             $scope.selectedTabIndex = index != undefined ? index : $scope.selectedTabIndex;
         };
 
+        $scope.updateFn = function(msg) {        
+            console.log(msg);
+        }
+
         $scope.activeTab = $scope.tabs[0];
 
         var DEFAULT_SC = {page : 1, pageSize : 20};
         $scope.sc = angular.copy(DEFAULT_SC);
 
+
         $scope.search = function (page) {
+            console.log("searching");
             $scope.sc.date = null;
             $scope.sc.toDate = null;
             $scope.sc.fromDate = null;

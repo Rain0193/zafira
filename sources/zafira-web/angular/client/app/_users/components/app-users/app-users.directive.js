@@ -8,11 +8,14 @@
             template: require('./app-users.html'),
             controller: 'AppUsersController',
             scope: {
+                updateFn: '&',
+                source: '='
             },
             controllerAs: '$ctrl',
             restrict: 'E',
             replace: true,
-            bindToController: true
+            link: function(scope, elm, attrs) {             
+            }
         };
     });
 

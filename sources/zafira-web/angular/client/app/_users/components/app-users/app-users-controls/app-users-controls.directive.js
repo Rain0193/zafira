@@ -5,9 +5,12 @@
         return {
             template: require('./app-users-controls.html'),
             scope: {
+                updateFn: '&'  //я так уже делала
             },
             restrict: 'E',
             replace: true,
+            link: function(scope, elm, attrs) {             
+            }
         };
     });
 

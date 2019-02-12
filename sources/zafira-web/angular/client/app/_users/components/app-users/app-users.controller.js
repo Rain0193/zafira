@@ -178,49 +178,50 @@
                 });
         };
 
-        $scope.search = function (page) {
-            $scope.sc.date = null;
-            $scope.sc.toDate = null;
-            $scope.sc.fromDate = null;
+        // $scope.search = function (page) {
+        //     $scope.sc.date = null;
+        //     $scope.sc.toDate = null;
+        //     $scope.sc.fromDate = null;
 
-            if(page)
-            {
-                $scope.sc.page = page;
-            }
+        //     if(page)
+        //     {
+        //         $scope.sc.page = page;
+        //     }
 
-            if ($scope.selectedRange.dateStart && $scope.selectedRange.dateEnd) {
-                if(!$scope.isEqualDate()){
-                    $scope.sc.fromDate = $scope.selectedRange.dateStart;
-                    $scope.sc.toDate = $scope.selectedRange.dateEnd;
-                }
-                else {
-                    $scope.sc.date = $scope.selectedRange.dateStart;
-                }
-            }
+        //     if ($scope.selectedRange.dateStart && $scope.selectedRange.dateEnd) {
+        //         if(!$scope.isEqualDate()){
+        //             $scope.sc.fromDate = $scope.selectedRange.dateStart;
+        //             $scope.sc.toDate = $scope.selectedRange.dateEnd;
+        //         }
+        //         else {
+        //             $scope.sc.date = $scope.selectedRange.dateStart;
+        //         }
+        //     }
 
-            var requestVariables = $location.search();
-            if(requestVariables) {
-                for(var key in requestVariables) {
-                    if(key && requestVariables[key]) {
-                        $scope.sc[key] = requestVariables[key];
-                    }
-                }
-            }
+        //     var requestVariables = $location.search();
+        //     if(requestVariables) {
+        //         for(var key in requestVariables) {
+        //             if(key && requestVariables[key]) {
+        //                 $scope.sc[key] = requestVariables[key];
+        //             }
+        //         }
+        //     }
 
-            UserService.searchUsers($scope.sc).then(function(rs) {
-                if(rs.success)
-                {
-                    $scope.sr = rs.data;
-                }
-                else
-                {
-                    alertify.error(rs.message);
-                }
-            });
-        };
+        //     UserService.searchUsers($scope.sc).then(function(rs) {
+        //         if(rs.success)
+        //         {
+        //             $scope.sr = rs.data;
+        //         }
+        //         else
+        //         {
+        //             alertify.error(rs.message);
+        //         }
+        //     });
+        // };
 
         (function initController() {
-            $scope.search(1);
+            // $scope.search(1);
+            console.log($scope)
         })();
     };
 })();

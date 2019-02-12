@@ -43,7 +43,7 @@
                     <md-button type="submit" class="hide">Search</md-button>
                 </thead>
                 <tbody md-body>
-                    <tr md-row ng-repeat="user in sr.results">
+                    <tr md-row ng-repeat="user in source.results">
                         <td md-cell>
                             <profile-photo name="userPhoto" ng-model="user.photoURL" size="35" class="grey-icon"
                                 label="#{{user.id}}"></profile-photo>
@@ -109,15 +109,15 @@
                             </md-menu>
                         </td>
                     </tr>
-                    <tr md-row data-ng-if="sr.results.length == 0">
+                    <tr md-row data-ng-if="source.results.length == 0">
                         <td id="noData" md-cell colspan="8" class="text-center">No users</td>
                     </tr>
                 </tbody>
             </table>
         </form>
     </md-table-container>
-    <md-table-pagination id="pagination" zafira-background-theme="pagination" ng-if="sr.results.length != 0"
-        md-limit="sr.pageSize" md-limit-options=false md-page="sr.page" md-total="{{sr.totalResults}}"
+    <md-table-pagination id="pagination" zafira-background-theme="pagination" ng-if="source.results.length != 0"
+        md-limit="source.pageSize" md-limit-options=false md-page="source.page" md-total="{{source.totalResults}}"
         md-page-select=false md-boundary-links=true md-on-paginate="search"></md-table-pagination>
 
 </div>
